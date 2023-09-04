@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone_Hunting_Legend</title>
+    <!-- cdn linking -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="">
+    <header>
+      <h2 class="text-6xl font-bold text-center capitalize text-slate-400">
+        hunting phone
+      </h2>
+    </header>
+    <main>
+      <!-- search box -->
+      <section class="mt-8 flex justify-center bg-gray-100 py-4 my-4">
+        <input
+          id="search-field"
+          type="text"
+          placeholder="Search"
+          class="input input-bordered w-full max-w-xs mx-4"
+        />
+        <button id="search" onclick="handleSearch()" class="btn btn-accent">
+          Search
+        </button>
+      </section>
+      <!-- Search result -->
+      <section class="container mx-auto mt-8">
+        <!-- loader -->
+        <div id="spinner" class="text-center my-40 hidden">
+          <span class="loading loading-spinner text-accent"></span>
+        </div>
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+        ></div>
+        <!-- show all section -->
+        <div id="show-all-container" class="hidden text-center my-8">
+          <button onclick="showAllButton()" class="btn btn-accent">
+            Show All
+          </button>
+        </div>
+      </section>
+
+      <!-- show details modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <!--  -->
+      <dialog
+        id="show_details_modal"
+        class="modal modal-bottom sm:modal-middle"
+      >
+        <form method="dialog" class="modal-box">
+          <h3
+            id="show-details-phone-name"
+            class="font-bold text-lg capitalize"
+          ></h3>
+          <div id="show-details-container"></div>
+          <div class="modal-action">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+    <footer></footer>
+    <script src="js/phone.js"></script>
+  </body>
+</html>
